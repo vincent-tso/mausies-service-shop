@@ -26,7 +26,7 @@ const features = [
 export function Features() {
     return (
         <section>
-            <div className="bg-white p-16">
+            <div className="bg-white p-16 pb-20">
                 <div className="flex flex-col text-black gap-y-4 pb-8 text-center">
                     <h1 className="font-bold text-3xl mx-auto">Why Choose Our Services?</h1>
                     <p className="text-gray-600 text-xl max-w-2xl mx-auto">We provide the most reliable and professional OSRS achievement services in the community.</p>
