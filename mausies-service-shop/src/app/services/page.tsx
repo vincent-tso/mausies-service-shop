@@ -1,9 +1,9 @@
+import Service from "../../components/Service"
+
 export default function ServicesPage() {
     return (
-        <section>
-            <div>
-                Testing
-            </div>
-        </section>
+        <div className="min-h-screen">
+            <Service />
+        </div>
     );
 }
