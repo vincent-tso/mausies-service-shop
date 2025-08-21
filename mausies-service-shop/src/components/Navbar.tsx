@@ -33,7 +33,7 @@ export function Navbar() {
                     <div className="flex gap-x-2">
                         {navItems.map((navItem, index) => (
                             <Link key={index} href={navItem.link}>
-                                <button className="flex gap-x-2 rounded-md transition duration-200 ease-in-out hover:bg-gray-200 hover:cursor-pointer p-2 px-4">
+                                <button className="flex gap-x-2 text-gray-600 rounded-md transition duration-200 ease-in-out hover:bg-gray-200 hover:cursor-pointer p-2 px-4">
                                     <navItem.icon />
                                     <p className="">{navItem.title}</p>
                                 </button>

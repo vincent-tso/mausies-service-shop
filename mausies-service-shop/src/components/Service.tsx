@@ -49,11 +49,7 @@ export function Service() {
     return (
         <section>
             <div className="bg-white">
-                <div className="flex flex-col text-black gap-y-4 p-16 text-center">
-                    <h1 className="font-bold text-3xl mx-auto">Our Services</h1>
-                    <p className="text-gray-600 text-xl max-w-3xl mx-auto">Professional completion of Old School RuneScape's most challenging achievements. All services are performed by skilled players with proven track records.</p>
-                </div>
-                <div className="grid grid-cols-2 gap-8 text-black px-20 pb-20 pt-8">
+                <div className="grid grid-cols-2 gap-8 text-black px-20 pb-20">
                     {services.map((service, index) => (
                         <Link key={index} href="services/inquire">
                             <div className="flex flex-col border border-border rounded-md border-gray-200 justify-between gap-8 p-8 h-full transition duration 200 ease-in-out hover:shadow-md hover:cursor-pointer">

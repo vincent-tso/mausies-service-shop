@@ -27,11 +27,7 @@ const testimonials = [
   export function Testimonials() {
     return(
         <section>
-            <div className="bg-gray-100 p-16 pb-20">
-                <div className="flex flex-col text-black gap-y-4 pb-8 text-center">
-                    <h1 className="font-bold text-3xl mx-auto">What Our Clients Say</h1>
-                    <p className="text-gray-600 text-xl max-w-2xl mx-auto">Join hundreds of satisfied players who have trusted us with their achievements.</p>
-                </div>
+            <div className="bg-gray-100 px-16 pb-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {testimonials.map((testimonial, index) => (
                         <div key={index} className="flex flex-col p-6 border border-gray-200 bg-white rounded-md text-black lg:px-8">
