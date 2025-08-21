@@ -11,7 +11,7 @@ export default function ThankYou() {
                         <ol>
                             <li className="pb-2">
                                 <strong>1. Review</strong>
-                                <p className="text-gray-600">We'll review your inquiry within 24 hours</p>
+                                <p className="text-gray-600">We&apos;ll review your inquiry within 24 hours</p>
                             </li>
                             <li className="pb-2">
                                 <strong>2. Quote</strong>

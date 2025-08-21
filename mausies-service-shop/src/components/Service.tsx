@@ -72,7 +72,7 @@ export function Service() {
                                         </ul>
                                     </div>
                                     <div className="max-w-sm">
-                                        <strong>What's Included:</strong>
+                                        <strong>What&apos;s Included:</strong>
                                         <ul>
                                             {service.included.map((inclusion, i) => (
                                                 <li key={i} className="text-sm">{inclusion}</li>
