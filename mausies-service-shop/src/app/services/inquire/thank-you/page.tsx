@@ -2,7 +2,7 @@ import { Footer } from "../../../../components/Footer"
 
 export default function ThankYou() {
     return (
-        <section>
+        <div className="min-h-screen">
             <div className="bg-white text-black p-16 flex flex-col">
                 <h1 className="mx-auto font-bold text-4xl p-20">Thank you for your inquiry.</h1>
                 <div className="mx-auto">
@@ -26,6 +26,6 @@ export default function ThankYou() {
                 </div>
             </div>
             <Footer />
-        </section>
+        </div>
     );
 }

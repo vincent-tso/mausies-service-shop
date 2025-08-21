@@ -45,7 +45,7 @@ const difficultyColors = {
     'Extreme': 'text-red-600 bg-red-100'
 };
 
-export default function Service() {
+export function Service() {
     return (
         <section>
             <div className="bg-white">
@@ -56,7 +56,7 @@ export default function Service() {
                 <div className="grid grid-cols-2 gap-8 text-black px-20 pb-20 pt-8">
                     {services.map((service, index) => (
                         <Link key={index} href="services/inquire">
-                            <div className="flex flex-col justify-between border border-border rounded-md border-gray-200 gap-8 p-8  transition duration 200 ease-in-out hover:shadow-md hover:cursor-pointer">
+                            <div className="flex flex-col border border-border rounded-md border-gray-200 justify-between gap-8 p-8 h-full transition duration 200 ease-in-out hover:shadow-md hover:cursor-pointer">
                                 <div>
                                     <h2 className="font-bold text-2xl">{service.type}</h2>
                                     <label className={`rounded-xl px-2 py-1 text-sm ${difficultyColors[service.difficulty as keyof typeof difficultyColors]}`}>{service.difficulty}</label>
