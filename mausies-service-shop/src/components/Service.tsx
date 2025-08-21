@@ -14,7 +14,7 @@ const services = [
     {
         type: "Quiver",
         difficulty: "Very Difficult",
-        description: "Unlock the most prestigous ranged upgrade in the game, Dizana's Quiver.",
+        description: `Unlock the most prestigous ranged upgrade in the game, Dizana's Quiver.`,
         price: "100m+",
         duration: "0.5-1 Hr",
         requirements: ["Combat level 100+", "Completion of Specific Quests", "High-level gear recommended"],

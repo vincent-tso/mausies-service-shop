@@ -5,22 +5,19 @@ const testimonials = [
         name: "DragonSlayer99",
         service: "Infernal Cape",
         rating: 5,
-        text: "Absolutely incredible service! Got my Infernal Cape without any issues. Professional, fast, and discrete. Highly recommend!",
-        avatar: "osrs player avatar"
+        text: "Absolutely incredible service! Got my Infernal Cape without any issues. Professional, fast, and discrete. Highly recommend!"
     },
     {
         name: "PvMKing2024",
         service: "Blood Ornament Kit",
         rating: 5,
-        text: "Second time using their services. The Blood Ornament Kit completion was flawless. Great communication throughout the process.",
-        avatar: "runescape player"
+        text: "Second time using their services. The Blood Ornament Kit completion was flawless. Great communication throughout the process."
     },
     {
         name: "IronManPro",
         service: "Quiver",
         rating: 5,
-        text: "These guys are the real deal. Got my quiver completed efficiently and safely. Will definitely use again for future achievements!",
-        avatar: "gaming character"
+        text: "These guys are the real deal. Got my quiver completed efficiently and safely. Will definitely use again for future achievements!"
     }
   ];
   
@@ -40,7 +37,7 @@ const testimonials = [
                                     <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                                 ))}
                             </div>
-                            <p className="text-gray-500 italic">"{testimonial.text}"</p>
+                            <p className="text-gray-500 italic">&quot;{testimonial.text}&quot;</p>
                         </div>
                     ))}
                 </div>
