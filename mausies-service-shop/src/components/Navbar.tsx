@@ -21,7 +21,7 @@ const navItems = [
 
 export function Navbar() {
     return (
-        <section className="sticky top-0 border-b-1">
+        <section className="sticky top-0 border-b-1 z-50">
             <nav>
                 <div className="flex justify-between px-6 py-4 text-md bg-white text-black">
                     <Link className="my-auto px-4" href="/">
