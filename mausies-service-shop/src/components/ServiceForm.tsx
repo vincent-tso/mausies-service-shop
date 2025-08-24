@@ -33,6 +33,7 @@ const gearRequirements = [
 
 export default function ServiceForm() {
     const [formData, setFormData] = useState({
+        firstName: '',
         serviceType: '',
         accountType: '',
         gearRequirements: '',
@@ -57,6 +58,21 @@ export default function ServiceForm() {
                 </div>
                 <div className="text-sm">
                     <Form action={createInquiry} >
+                        <div className="pb-6">
+                            <div className="pb-2 font-bold">
+                                <label className="flex gap-2"><Mail />First Name</label>
+                            </div>
+                            <div className="">
+                                <input 
+                                name="firstName" 
+                                placeholder="Your First Name"
+                                id="firstName" 
+                                value={formData.firstName} 
+                                onChange={((e) => handleInputChange("firstName", e.target.value))} 
+                                required 
+                                className="bg-gray-200 text-black rounded-md p-2 px-4 w-full"/>
+                            </div>
+                        </div>
                         <div className="pb-6">
                             <div className="pb-2 font-bold">
                                 <label className="flex gap-2"><ScrollText />Service Type</label>
