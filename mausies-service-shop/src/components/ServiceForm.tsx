@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { redirect } from "next/navigation";
 import { ScrollText, User, Sword, Mail, MessageSquare } from "lucide-react"
+import { createInquiry } from "../app/services/inquire/actions"
+import Form from 'next/form'
 
 const serviceTypes = [
     "Inferno Cape",
@@ -29,7 +31,7 @@ const gearRequirements = [
     }
 ]
 
-export default function Form() {
+export default function ServiceForm() {
     const [formData, setFormData] = useState({
         serviceType: '',
         accountType: '',
@@ -37,14 +39,6 @@ export default function Form() {
         email: '',
         additionalNotes: ''
     });
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle form submission here
-        console.log('Form submitted:', formData);
-        // You would typically send this data to your backend
-        redirect("/services/inquire/thank-you");
-    };
 
     const handleInputChange = (field: string, value: string) => {
         setFormData(prev => ({
@@ -62,7 +56,7 @@ export default function Form() {
                     <p className="text-gray-400">Please provide your account details and service requirements</p>
                 </div>
                 <div className="text-sm">
-                    <form action="/services/inquire/thank-you" onSubmit={(e) => handleSubmit(e)}>
+                    <Form action={createInquiry} >
                         <div className="pb-6">
                             <div className="pb-2 font-bold">
                                 <label className="flex gap-2"><ScrollText />Service Type</label>
@@ -139,7 +133,7 @@ export default function Form() {
                         <button type="submit" className="bg-black rounded-md p-4 text-white cursor-pointer transition duration-200 ease-in-out hover:opacity-90 w-full">
                             Submit Inquiry
                         </button>
-                    </form>
+                    </Form>
                 </div>
             </div>
         </section>
