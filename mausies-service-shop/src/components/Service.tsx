@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const services = [
     {
-        type: "Infernal Cape",
+        type: "Inferno Cape",
         difficulty: "Extreme",
         description: "The ultimate PvM challenge. Our experienced players will complete the Inferno for you, earning the prestigious Infernal Cape.",
         price: "200m+",
@@ -51,7 +51,12 @@ export function Service() {
             <div className="bg-white">
                 <div className="grid grid-cols-2 gap-8 text-black px-20 pb-20">
                     {services.map((service, index) => (
-                        <Link key={index} href="services/inquire">
+                        <Link key={index} href={{
+                            pathname: "services/inquire",
+                            query: {
+                                serviceType: service.type
+                            }
+                        }}>
                             <div className="flex flex-col border border-border rounded-md border-gray-200 justify-between gap-8 p-8 h-full transition duration 200 ease-in-out hover:shadow-md hover:cursor-pointer">
                                 <div>
                                     <h2 className="font-bold text-2xl">{service.type}</h2>

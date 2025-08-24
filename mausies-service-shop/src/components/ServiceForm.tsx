@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react';
-import { redirect } from "next/navigation";
-import { ScrollText, User, Sword, Mail, MessageSquare } from "lucide-react"
+import { UserPen, ScrollText, User, Sword, Mail, MessageSquare } from "lucide-react"
 import { createInquiry } from "../app/services/inquire/actions"
 import Form from 'next/form'
+import { usePathname, useRouter } from "next/navigation";
 
 const serviceTypes = [
     "Inferno Cape",
@@ -31,7 +31,9 @@ const gearRequirements = [
     }
 ]
 
-export default function ServiceForm() {
+type Service = typeof serviceTypes[number];
+
+export default function ServiceForm({ initialServiceType }: { initialServiceType: Service }) {
     const [formData, setFormData] = useState({
         firstName: '',
         serviceType: '',
@@ -40,6 +42,9 @@ export default function ServiceForm() {
         email: '',
         additionalNotes: ''
     });
+
+    const router = useRouter();
+    const pathname = usePathname();
 
     const handleInputChange = (field: string, value: string) => {
         setFormData(prev => ({
@@ -60,7 +65,7 @@ export default function ServiceForm() {
                     <Form action={createInquiry} >
                         <div className="pb-6">
                             <div className="pb-2 font-bold">
-                                <label className="flex gap-2"><Mail />First Name</label>
+                                <label className="flex gap-2"><UserPen />First Name</label>
                             </div>
                             <div className="">
                                 <input 
@@ -80,7 +85,15 @@ export default function ServiceForm() {
                             <div className="grid grid-cols-2 gap-2">
                                 {serviceTypes.map((serviceType, index) => (
                                     <div key={index} className="">
-                                        <input type="radio" name="serviceType" required id={serviceType} value={formData.serviceType} onChange={(value) => handleInputChange("serviceType", serviceType)} className="peer absolute opacity-0 pointer-events-none"/>
+                                        <input 
+                                        type="radio" 
+                                        name="serviceType" 
+                                        defaultChecked={initialServiceType === serviceType}
+                                        required 
+                                        id={serviceType} 
+                                        value={formData.serviceType} 
+                                        onChange={(value) => handleInputChange("serviceType", serviceType)} 
+                                        className="peer absolute opacity-0 pointer-events-none"/>
                                         <label htmlFor={serviceType} className="flex items-center space-x-2 bg-white text-black border border-gray-200 border-border rounded-md p-2 px-4 transition duration-200 ease-in-out hover:bg-gray-100 cursor-pointer peer-checked:bg-gray-400 peer-checked:bg-gray-400/30">{serviceType}</label>
                                     </div>
                                 ))}
@@ -93,7 +106,14 @@ export default function ServiceForm() {
                             <div className="grid grid-cols-2 gap-2">
                                 {accountTypes.map((accountType, index) => (
                                     <div key={index} className="">
-                                        <input type="radio" name="accountType" required id={accountType} value={formData.accountType} onChange={(value) => handleInputChange("accountType", accountType)} className="peer absolute opacity-0 pointer-events-none"/>
+                                        <input 
+                                        type="radio" 
+                                        name="accountType" 
+                                        defaultChecked={accountType === "Main"} 
+                                        required id={accountType} 
+                                        value={formData.accountType} 
+                                        onChange={(value) => handleInputChange("accountType", accountType)} 
+                                        className="peer absolute opacity-0 pointer-events-none"/>
                                         <label htmlFor={accountType} className="flex items-center space-x-2 bg-white text-black border border-gray-200 border-border rounded-md p-2 px-4 transition duration-200 ease-in-out hover:bg-gray-100 cursor-pointer peer-checked:bg-gray-400 peer-checked:bg-gray-400/30">{accountType}</label>
                                     </div>
                                 ))}
@@ -106,7 +126,14 @@ export default function ServiceForm() {
                             <div className="grid grid-cols-1 gap-2">
                                 {gearRequirements.map((gearRequirements, index) => (
                                     <div key={index}>
-                                        <input type="radio" name="gearRequirements" required id={gearRequirements.title} value={formData.gearRequirements} onChange={(value) => handleInputChange("gearRequirements", gearRequirements.title)} className="peer absolute opacity-0 pointer-events-none"/>
+                                        <input 
+                                        type="radio" 
+                                        name="gearRequirements" 
+                                        defaultChecked={gearRequirements.title === "Max Gear"} 
+                                        required id={gearRequirements.title} 
+                                        value={formData.gearRequirements} 
+                                        onChange={(value) => handleInputChange("gearRequirements", gearRequirements.title)} 
+                                        className="peer absolute opacity-0 pointer-events-none"/>
                                         <label htmlFor={gearRequirements.title} className="flex flex-col space-x-2 bg-white text-black border border-gray-200 border-border rounded-md p-2 px-4 transition duration-200 ease-in-out cursor-pointer hover:bg-gray-100 peer-checked:bg-gray-400 peer-checked:bg-gray-400/30">
                                             {gearRequirements.title}
                                             <p className="text-gray-600">{gearRequirements.description}</p>

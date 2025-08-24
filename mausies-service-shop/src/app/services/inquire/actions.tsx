@@ -9,6 +9,7 @@ const EmailSchema = z.string();
 
 export async function createInquiry(formData: FormData) {
     // Create inquiry data
+    console.log(formData);
 
     if (!process.env.RESEND_API_KEY) {
         throw new Error("RESEND_API_KEY is not set");
