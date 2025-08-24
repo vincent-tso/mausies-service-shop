@@ -62,7 +62,7 @@ export default function Form() {
                     <p className="text-gray-400">Please provide your account details and service requirements</p>
                 </div>
                 <div className="text-sm">
-                    <form onSubmit={(e) => handleSubmit(e)}>
+                    <form action="/services/inquire/thank-you" onSubmit={(e) => handleSubmit(e)}>
                         <div className="pb-6">
                             <div className="pb-2 font-bold">
                                 <label className="flex gap-2"><ScrollText />Service Type</label>
