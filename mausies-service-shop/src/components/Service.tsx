@@ -49,7 +49,7 @@ export function Service() {
     return (
         <section>
             <div className="bg-white">
-                <div className="grid grid-cols-2 gap-8 text-black px-20 pb-20">
+                <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-8 text-black px-20 pb-20 ">
                     {services.map((service, index) => (
                         <Link key={index} href={{
                             pathname: "services/inquire",
